@@ -1,4 +1,4 @@
-// 1. LIGHT / DARK MODE - 2 Marks
+
 function toggleMode(){
   document.body.classList.toggle('dark-mode');
   const btn = document.querySelector('.mode-btn');
@@ -10,20 +10,19 @@ function toggleMode(){
     localStorage.setItem('mode','light');
   }
 }
-// Keep mode after refresh
+
 window.addEventListener('load', ()=>{
   if(localStorage.getItem('mode')==='dark'){
     document.body.classList.add('dark-mode');
     const btn=document.querySelector('.mode-btn');
     if(btn) btn.textContent='☀️';
   }
-  // 2. WELCOME MESSAGE - Feature
+ 
   if(window.location.pathname.includes('index.html') || window.location.pathname.endsWith('/')){
     console.log("Welcome to Zizile Jako Portfolio!");
-    // Optional alert - uncomment if you want pop-up
-    // alert("Welcome to Zizile Jako Portfolio!");
+    
   }
-  // 6. DIGITAL CLOCK - Extra Creativity
+
   const clock = document.getElementById('clock');
   if(clock){
     setInterval(()=>{
@@ -33,7 +32,7 @@ window.addEventListener('load', ()=>{
   }
 });
 
-// 3. SHOW / HIDE INFORMATION - Feature
+
 function toggleInfo(id){
   const info = document.getElementById(id);
   if(info.style.display === 'none' || info.style.display === ''){
@@ -42,7 +41,7 @@ function toggleInfo(id){
     info.style.display = 'none';
   }
 }
-// Typing Effect for Home - Creativity 4 marks
+
 document.addEventListener('DOMContentLoaded', ()=>{
   const text = "Aspiring Data Analyst | Software Engineer";
   const el = document.querySelector('.hero-text h3');
