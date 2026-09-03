@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Me - Zizile Jako</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="icon" href="zizile.jpg">
+<style>
+.skill-badge{display:inline-block; background:#e8eaf6; color:#1a237e; padding:6px 12px; border-radius:20px; margin:5px; font-size:13px; font-weight:bold; border:1px solid #c5cae9; transition:0.3s;}
+.cert-card{background:white; border-left:4px solid #ffca28; padding:15px; margin:12px 0; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.08); transition:0.3s;}
+body.dark-mode .skill-badge{background:#2a2a4a; color:#ffca28; border-color:#3a3a5a;}
+body.dark-mode .cert-card{background:#1e1e2f; color:#f1f1f1; box-shadow:0 2px 8px rgba(0,0,0,0.4);}
+</style>
+</head>
+<body>
+<div class="animated-bg"><span></span><span></span><span></span><span></span></div>
+
+<header>
+<div class="logo"><span class="logo-circle" style="background:#ffca28; color:#1a237e; width:36px; height:36px; border-radius:50%; display:inline-flex; justify-content:center; align-items:center; font-weight:900; margin-right:8px;">ZJ</span> Zizile Jako</div>
+<nav>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="about.html" class="active">About Me</a></li>
+<li><a href="family.html">Family</a></li>
+<li><a href="hobbies.html">Hobbies</a></li>
+<li><a href="gallery.html">Gallery</a></li>
+<li><a href="contact.html">Contact</a></li>
+<li><button onclick="toggleMode()" class="mode-btn">🌙</button></li>
+</ul>
+</nav>
+</header>
+
+<section>
+<h2>About Me</h2>
+<div class="card">
+<p>Hi! I am <strong>Zizile Jako</strong>, 21 years old from Elliotdale, Eastern Cape. I am currently pursuing an Advanced Diploma in Information and Communication Technology at Walter Sisulu University.</p>
+<p>I am passionate about becoming a <strong>Data Analyst and Software Engineer</strong> with a keen interest in Fintech and Financial Innovation.</p>
+</div>
+
+<h2>Education</h2>
+<div class="card">
+<h4>Walter Sisulu University - Advanced Diploma in ICT</h4>
+<p>2023 - Present | Major: Software Development</p>
+<h4 style="margin-top:12px;">Kgothalang Secondary School - Matric</h4>
+<p>Completed 2022</p>
+</div>
+
+<h2>Technical Experience</h2>
+<div class="card">
+<div class="cert-card" style="border-left-color:#1a237e;">
+<h4>Information Systems Tutor - WSU</h4>
+<p><strong>2024 - Present | Walter Sisulu University</strong></p>
+<p>Assisting students with Information Systems, programming (Java, PHP), databases (SQL), and practical projects. Providing academic support and tutoring sessions to help students excel.</p>
+</div>
+</div>
+
+<h2>Professional Development & Certification</h2>
+<div class="card">
+<div class="cert-card">
+<h4>UCT-CORTEX HUB FINTECH LAB - 2025 WINTER SCHOOL</h4>
+<p><strong>Certificate of Completion</strong></p>
+<p>This is to certify that <strong>Zizile Jako</strong> has successfully completed the UCT-Cortex Hub Lab 2025 Winter School, an intensive three-week programme in Open Banking, Open Finance, and Fintech Innovation.</p>
+<p><strong>Date:</strong> 22 June - 10 July 2025 | <strong>Venue:</strong> The Cortex Hub, East London, Eastern Cape</p>
+<p><strong>Issued by:</strong> Financial Innovation Hub & Cortex Hub</p>
+<a href="Certificate_Zizile_Jako.pdf" target="_blank" class="btn" style="padding:7px 16px; font-size:13px; margin-top:10px;">View Certificate</a>
+<a href="Certificate_Zizile_Jako.pdf" download class="btn" style="padding:7px 16px; font-size:13px; margin-top:10px; background:#ffca28; color:#000;">Download PDF</a>
+</div>
+</div>
+
+<h2>Technical Skills</h2>
+<div class="card">
+<span class="skill-badge">Java</span>
+<span class="skill-badge">Python</span>
+<span class="skill-badge">JavaScript</span>
+<span class="skill-badge">PHP</span>
+<span class="skill-badge">HTML & CSS</span>
+<span class="skill-badge">SQL</span>
+<span class="skill-badge">Data Analytics</span>
+<span class="skill-badge">Git & GitHub</span>
+</div>
+
+</section>
+
+<footer><p></p></footer>
+<script src="js/script.js"></script>
+</body>
+</html>

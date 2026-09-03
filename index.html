@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zizile Jako | Home</title>
+<link rel="stylesheet" href="css/style.css">
+<style>
+.hero{display:flex; flex-direction:row; align-items:center; gap:40px; padding:30px; flex-wrap:wrap;}
+.hero-img{order:1;}
+.hero-text{order:2; flex:1;}
+.hero-img img{width:280px; height:280px; border-radius:50%; border:5px solid #1a237e; object-fit:cover; cursor:pointer;}
+</style>
+</head>
+<body>
+
+<header>
+<div class="logo">Zizile Jako</div>
+<nav>
+<ul>
+<li><a href="index.html" class="active">Home</a></li>
+<li><a href="about.html">About Me</a></li>
+<li><a href="family.html">Family</a></li>
+<li><a href="hobbies.html">Hobbies</a></li>
+<li><a href="gallery.html">Gallery</a></li>
+<li><a href="contact.html">Contact</a></li>
+<li><button onclick="toggleMode()" class="mode-btn">🌙</button></li>
+</ul>
+</nav>
+</header>
+
+<section class="hero">
+<div class="hero-img">
+<img src="zizile.jpg" alt="Zizile Jako" onclick="openHomePic()">
+</div>
+
+<div class="hero-text">
+<h1>Zizile Jako</h1>
+<h3>Aspiring Data Analyst | Software Engineer</h3>
+<p id="welcome-msg"></p>
+<p>🕒 Current Time: <span id="clock" style="font-weight:bold; color:#1a237e; background:#fff9c4; padding:3px 8px; border-radius:10px;"></span></p>
+<p>I am an Advanced Diploma student at Walter Sisulu University with a passion for software engineering, data analytics, and technology.</p>
+
+<!-- ADDED FOR MARKS - Show/Hide Feature -->
+<button onclick="toggleInfo('moreInfo')" class="btn" style="margin-top:10px; background:#3949ab; color:white; border:none; padding:8px 16px; border-radius:20px; cursor:pointer;">Show/Hide More About Me</button>
+<div id="moreInfo" style="display:none; margin-top:12px; background:#fffde7; padding:12px; border-radius:10px; border-left:4px solid #ffca28;">
+<p><b>My Goal:</b> To become a Software Developer and create useful websites for my community. I love coding and data.</p>
+</div>
+
+<a href="Zizile-Jako-CV.pdf" class="btn" download style="margin-top:15px; display:inline-block;">Download CV</a>
+</div>
+</section>
+
+<section>
+<h2>About Me</h2>
+<div class="card">
+<p>I am Zizile Jako a 21 year old from Elliotdale, Eastern Cape. Pursuing Advanced Diploma in ICT at Walter Sisulu University.</p>
+<a href="about.html" class="btn">Read More About Me</a>
+</div>
+</section>
+
+<div id="home-lightbox" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); justify-content:center; align-items:center; z-index:9999;" onclick="this.style.display='none'">
+<img src="zizile.jpg" style="max-width:90%; max-height:90%; border-radius:10px; border:5px solid white;">
+</div>
+
+<footer><p>© 2026 Zizile Jako</p></footer>
+
+<script src="js/script.js"></script>
+<script>
+function openHomePic(){ document.getElementById('home-lightbox').style.display='flex'; }
+
+
+const welcome = document.getElementById('welcome-msg');
+if(welcome){
+  const hour = new Date().getHours();
+  let greet = "Welcome!";
+  if(hour < 12) greet = "Good Morning! ☀️ Welcome to my Portfolio!";
+  else if(hour < 18) greet = "Good Afternoon! 🌤️ Welcome to my Portfolio!";
+  else greet = "Good Evening! 🌙 Welcome to my Portfolio!";
+  welcome.textContent = greet;
+  welcome.style.fontWeight = "bold";
+  welcome.style.color = "#1a237e";
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gallery - Zizile Jako</title>
+<link rel="stylesheet" href="css/style.css">
+<style>
+.image-gallery{display:flex; flex-wrap:wrap; gap:15px; padding:20px; justify-content:center;}
+.image-gallery img{width:180px; height:180px; object-fit:cover; border-radius:10px; cursor:pointer; border:2px solid #ddd; transition:0.3s;}
+.image-gallery img:hover{transform:scale(1.05); border-color:#1a237e;}
+#fullView{display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.92); justify-content:center; align-items:center; z-index:9999; flex-direction:column;}
+#fullView img{max-width:90%; max-height:80%; border-radius:12px; border:5px solid white;}
+</style>
+</head>
+<body>
+<header>
+<div class="logo">Zizile Jako</div>
+<nav>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="about.html">About Me</a></li>
+<li><a href="family.html">Family</a></li>
+<li><a href="hobbies.html">Hobbies</a></li>
+<li><a href="gallery.html" class="active">Gallery</a></li>
+<li><a href="contact.html">Contact</a></li>
+<li><button onclick="toggleMode()" class="mode-btn">🌙</button></li>
+</ul>
+</nav>
+</header>
+
+<section>
+<h2 style="border-left:4px solid #ffca28; padding-left:10px; margin-left:20px;">Image Gallery <button onclick="startSlideshow()" class="btn" style="font-size:12px; padding:6px 12px; margin-left:10px;">Start Slideshow</button></h2>
+
+<div class="image-gallery" id="gallery">
+<img src="images/ZEE.jpg" onclick="openFull(this.src)">
+<img src="images/fam.jpg" onclick="openFull(this.src)">
+<img src="images/ziphozee.jpg" onclick="openFull(this.src)">
+<img src="images/sissy.jpg" onclick="openFull(this.src)">
+<img src="zizile.jpg" onclick="openFull(this.src)">
+<img src="images/cuzzy.jpg" onclick="openFull(this.src)">
+<img src="images/tshezi.jpg" onclick="openFull(this.src)">
+<img src= "images/lovers.jpg" onclick="openFull(this.src)"
+</div>
+<p style="margin-left:20px; color:#555; font-size:13px;"></p>
+</section>
+
+<div id="fullView" onclick="closeFull()">
+<img id="fullImg" src="">
+<p style="color:white; margin-top:15px; background:#3949ab; padding:8px 18px; border-radius:20px; cursor:pointer;">✕ Click to Close Full View</p>
+</div>
+
+<footer><p></p></footer>
+<script src="js/script.js"></script>
+<script>
+function openFull(src){ document.getElementById('fullImg').src = src; document.getElementById('fullView').style.display='flex'; }
+function closeFull(){ document.getElementById('fullView').style.display='none'; }
+let slideIndex=0, slideInterval;
+function startSlideshow(){
+  const images=document.querySelectorAll('#gallery img');
+  openFull(images[0].src);
+  slideInterval=setInterval(()=>{ slideIndex=(slideIndex+1)%images.length; document.getElementById('fullImg').src=images[slideIndex].src; },2000);
+  document.getElementById('fullView').onclick=function(){ clearInterval(slideInterval); closeFull(); setTimeout(()=>{document.getElementById('fullView').onclick=closeFull;},500); };
+}
+</script>
+</body>
+</html>
