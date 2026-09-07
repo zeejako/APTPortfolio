@@ -10,7 +10,13 @@
 .gallery-wrapper{max-width:700px; margin:30px auto; padding:20px; text-align:center;}
 .main-card{background:white; border-radius:18px; padding:20px; box-shadow:0 8px 30px rgba(0,0,0,0.12); border:1px solid #eee;}
 .main-card img{width:100%; max-height:480px; object-fit:cover; border-radius:14px; border:3px solid #1a237e;}
-.message{margin-top:16px; background:#fff9c4; padding:14px 16px; border-radius:12px; border-left:4px solid #ffca28; text-align:left; font-size:15px; line-height:1.5;}
+
+
+.message{margin-top:16px; background:#fff9c4; padding:14px 16px; border-radius:12px; border-left:4px solid #ffca28; text-align:left; font-size:15px; line-height:1.5; color:#1a237e; font-weight:500;}
+body.dark-mode.message{background:#2d2d4d!important; color:#ffeb3b!important; border-left-color:#ffca28!important; box-shadow:0 0 0 1px rgba(255,202,40,0.3);}
+body.dark-mode.main-card{background:#1e1e2f; border-color:#444;}
+body.dark-mode.counter{background:#2a2a4a; color:#ffca28; border:1px solid #ffca28;}
+
 .controls{display:flex; justify-content:space-between; align-items:center; margin-top:20px;}
 .arrow-btn{width:48px; height:48px; border-radius:50%; border:none; background:#1a237e; color:white; font-size:20px; cursor:pointer; display:flex; align-items:center; justify-content:center;}
 .arrow-btn:hover{background:#3949ab;}
@@ -51,9 +57,7 @@ nav ul{display:flex; align-items:center; gap:14px; list-style:none; flex-wrap:wr
       <button class="arrow-btn" id="nextBtn"><i class="fa-solid fa-chevron-right"></i></button>
     </div>
 
-   
     <button id="slideBtn" class="slide-btn" onclick="toggleSlideshow()"><i class="fa-solid fa-play"></i> Start Slideshow</button>
-
   </div>
 </div>
 </section>
@@ -103,12 +107,11 @@ function toggleSlideshow(){
     slideInterval = setInterval(() => {
       index = (index + 1) % items.length;
       showItem();
-    }, 2500); 
+    }, 2500);
   }
 }
 
 showItem();
-
 
 const themeIcon = document.querySelector('#theme-toggle i');
 const originalToggle = window.toggleMode;
