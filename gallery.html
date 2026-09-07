@@ -17,8 +17,8 @@
 .counter{font-weight:800; color:#1a237e; background:#e8eaf6; padding:8px 18px; border-radius:20px; letter-spacing:1px;}
 .icon-circle{ width:42px; height:42px; border-radius:50%; border:1px solid rgba(0,0,0,0.15); background:white; color:#1a237e; display:flex; align-items:center; justify-content:center; cursor:pointer; font-size:18px; }
 nav ul{display:flex; align-items:center; gap:14px; list-style:none; flex-wrap:wrap;}
-body.dark-mode.main-card{background:#1e1e2f; border-color:#333;}
-body.dark-mode.counter{background:#2a2a4a; color:#ffca28;}
+.slide-btn{margin-top:15px; background:#1a237e; color:white; border:none; padding:10px 20px; border-radius:25px; cursor:pointer; font-weight:bold;}
+.slide-btn.stop{background:#d32f2f;}
 </style>
 </head>
 <body>
@@ -32,7 +32,7 @@ body.dark-mode.counter{background:#2a2a4a; color:#ffca28;}
 <li><a href="hobbies.html">Hobbies</a></li>
 <li><a href="gallery.html" class="active">Gallery</a></li>
 <li><a href="contact.html">Contact</a></li>
-<li><button id="theme-toggle" onclick="toggleMode()" class="icon-circle" title="Light/Dark Mode"><i class="fa-solid fa-moon"></i></button></li>
+<li><button id="theme-toggle" onclick="toggleMode()" class="icon-circle"><i class="fa-solid fa-moon"></i></button></li>
 </ul>
 </nav>
 </header>
@@ -50,6 +50,10 @@ body.dark-mode.counter{background:#2a2a4a; color:#ffca28;}
       <span class="counter" id="counter">< 1 / 8 ></span>
       <button class="arrow-btn" id="nextBtn"><i class="fa-solid fa-chevron-right"></i></button>
     </div>
+
+   
+    <button id="slideBtn" class="slide-btn" onclick="toggleSlideshow()"><i class="fa-solid fa-play"></i> Start Slideshow</button>
+
   </div>
 </div>
 </section>
@@ -57,11 +61,10 @@ body.dark-mode.counter{background:#2a2a4a; color:#ffca28;}
 <footer><p>Zizile Jako</p></footer>
 <script src="js/script.js"></script>
 <script>
-
 const items = [
   { img: "zizile.jpg", msg: "<i class='fa-solid fa-graduation-cap'></i> My Graduation Day - A dream come true! This moment marks years of hard work, late nights, and my family's prayers. I made it! - Zizile, 2026" },
-  { img: "images/fam.jpg", msg: "<i class='fa-solid fa-people-roof'></i> My Family, My Everything - You are my strength, my love, and my reason to keep pushing. Thank you for believing in me always." },
-  { img: "images/ziphozee.jpg", msg: "<i class='fa-solid fa-heart'></i> ZiphoZee - My Twin, My Mirror, My Other Half. Two souls, one heart. Growing up with you is my greatest blessing. Forever us!" },
+  { img: "images/fam.jpg", msg: "<i class='fa-solid fa-people-roof'></i> My Family, My Everything - You are my strength, my love, and my reason to keep pushing." },
+  { img: "images/ziphozee.jpg", msg: "<i class='fa-solid fa-heart'></i> ZiphoZee - My Twin, My Mirror, My Other Half. Forever us!" },
   { img: "images/ZEE.jpg", msg: "<i class='fa-solid fa-user'></i> ZEE - Just me being me!" },
   { img: "images/sissy.jpg", msg: "<i class='fa-solid fa-user-group'></i> My Sister - My support system" },
   { img: "images/cuzzy.jpg", msg: "<i class='fa-solid fa-people-group'></i> Cousins Love - Family bond forever" },
@@ -70,9 +73,13 @@ const items = [
 ];
 
 let index = 0;
+let slideInterval = null;
+let isPlaying = false;
+
 const imgEl = document.getElementById('gallery-img');
 const msgEl = document.getElementById('gallery-msg');
 const counterEl = document.getElementById('counter');
+const slideBtn = document.getElementById('slideBtn');
 
 function showItem(){
   imgEl.src = items[index].img;
@@ -80,15 +87,25 @@ function showItem(){
   counterEl.innerHTML = `< ${index+1} / ${items.length} >`;
 }
 
-document.getElementById('prevBtn').onclick = () => {
-  index = (index - 1 + items.length) % items.length;
-  showItem();
-}
-document.getElementById('nextBtn').onclick = () => {
-  index = (index + 1) % items.length;
-  showItem();
-}
+document.getElementById('prevBtn').onclick = () => { index = (index - 1 + items.length) % items.length; showItem(); }
+document.getElementById('nextBtn').onclick = () => { index = (index + 1) % items.length; showItem(); }
 
+function toggleSlideshow(){
+  if(isPlaying){
+    clearInterval(slideInterval);
+    isPlaying = false;
+    slideBtn.innerHTML = "<i class='fa-solid fa-play'></i> Start Slideshow";
+    slideBtn.classList.remove('stop');
+  } else {
+    isPlaying = true;
+    slideBtn.innerHTML = "<i class='fa-solid fa-pause'></i> Stop Slideshow";
+    slideBtn.classList.add('stop');
+    slideInterval = setInterval(() => {
+      index = (index + 1) % items.length;
+      showItem();
+    }, 2500); 
+  }
+}
 
 showItem();
 
