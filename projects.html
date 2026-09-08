@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projects - Zizile Jako</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+.projects-hero{text-align:center; max-width:700px; margin:0 auto 30px;}
+.badge{display:inline-block; background:#e8eaf6; color:#1a237e; padding:5px 11px; border-radius:20px; font-size:11px; font-weight:800; margin:3px; border:1px solid #c5cae9;}
+.proj-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(300px,1fr)); gap:24px; max-width:1000px; margin:0 auto;}
+.proj-card{background:white; border-radius:20px; overflow:hidden; box-shadow:0 10px 30px rgba(0,0,0,0.08); border:1px solid #eee; transition:0.35s; display:flex; flex-direction:column;}
+.proj-card:hover{transform:translateY(-8px); box-shadow:0 18px 45px rgba(26,35,126,0.18);}
+.proj-img{height:200px; display:flex; align-items:center; justify-content:center; font-size:64px; position:relative;}
+.proj-content{padding:20px; flex:1; display:flex; flex-direction:column;}
+.proj-content h3{margin:0 0 8px; color:#1a237e; font-size:18px;}
+.proj-content ul{margin:10px 0; padding-left:18px; font-size:13px; color:#444; line-height:1.8;}
+.proj-btns{display:flex; gap:10px; margin-top:14px;}
+.btn-dark{background:#1a237e; color:white; padding:10px 16px; border-radius:20px; font-size:12px; font-weight:700; text-decoration:none; flex:1; text-align:center;}
+.btn-light{background:#fffde7; color:#1a237e; border:1px solid #ffca28; padding:10px 16px; border-radius:20px; font-size:12px; font-weight:700; text-decoration:none; flex:1; text-align:center;}
+body.dark-mode .proj-card{background:#1e1e2f; border-color:#333;}
+body.dark-mode .proj-content ul, body.dark-mode .proj-content p{color:#ccc;}
+.icon-circle{ width:42px; height:42px; border-radius:50%; border:1px solid rgba(0,0,0,0.15); background:white; color:#1a237e; display:flex; align-items:center; justify-content:center; cursor:pointer;}
+nav ul{display:flex; align-items:center; gap:12px; list-style:none; flex-wrap:wrap; justify-content:center;}
+</style>
+</head>
+<body>
+<header style="display:flex; justify-content:space-between; align-items:center; padding:16px 24px;">
+<div class="logo"><span style="background:#ffca28; color:#1a237e; width:36px; height:36px; border-radius:50%; display:inline-flex; justify-content:center; align-items:center; font-weight:900; margin-right:8px;">ZJ</span> Zizile Jako</div>
+<nav><ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="about.html">About</a></li>
+<li><a href="family.html">Family</a></li>
+<li><a href="hobbies.html">Hobbies</a></li>
+<li><a href="projects.html" class="active">Projects</a></li>
+<li><a href="goals.html">Goals</a></li>
+<li><a href="gallery.html">Gallery</a></li>
+<li><a href="contact.html">Contact</a></li>
+<li><button id="theme-toggle" onclick="toggleMode()" class="icon-circle"><i class="fa-solid fa-moon"></i></button></li>
+</ul></nav>
+</header>
+
+<section>
+<div class="projects-hero">
+<h2 style="border-left:4px solid #ffca28; display:inline-block; padding-left:12px;"><i class="fa-solid fa-rocket"></i> My Projects</h2>
+<p style="color:#666; margin-top:10px;">Real systems I built during my Advanced Diploma in ICT at WSU</p>
+</div>
+
+<div class="proj-grid">
+
+
+<div class="proj-card">
+<div class="proj-img" style="background:linear-gradient(135deg, #1a237e, #3949ab); color:#ffca28;">
+<i class="fa-solid fa-train-subway"></i>
+</div>
+<div class="proj-content">
+<h3><i class="fa-solid fa-ticket" style="color:#ffca28;"></i> Train Booking System</h3>
+<p style="font-size:13.5px; color:#555; margin:0;">A digital platform that allows passengers to search, book and manage train tickets online — no more long queues.</p>
+<ul>
+<li>Search trains by route, date & time</li>
+<li>Book seat, choose class (Economy/Business)</li>
+<li>Calculate fare automatically</li>
+<li>Generate ticket & booking confirmation</li>
+<li>Admin can view all bookings & manage trains</li>
+</ul>
+<div><span class="badge">HTML</span><span class="badge">CSS</span><span class="badge">JavaScript</span><span class="badge">PHP/MySQL</span></div>
+<div class="proj-btns"><a href="#" class="btn-dark"><i class="fa-solid fa-eye"></i> Live Demo</a><a href="https://github.com/zeejako" target="_blank" class="btn-light"><i class="fa-brands fa-github"></i> GitHub</a></div>
+</div>
+</div>
+
+
+<div class="proj-card">
+<div class="proj-img" style="background:linear-gradient(135deg, #fffde7, #ffecb3); color:#1a237e;">
+<i class="fa-solid fa-book-open-reader"></i>
+</div>
+<div class="proj-content">
+<h3><i class="fa-solid fa-book-bookmark" style="color:#1a237e;"></i> Library Book Borrowing System</h3>
+<p style="font-size:13.5px; color:#555; margin:0;">A smart library system to help WSU students borrow, return and track books easily. Solves manual record problems.</p>
+<ul>
+<li>Student registration & login</li>
+<li>Search books by title, author, category</li>
+<li>Borrow book with due date calculation</li>
+<li>Return book & calculate late fines</li>
+<li>Admin dashboard: add books, view borrowed books</li>
+</ul>
+<div><span class="badge">HTML</span><span class="badge">CSS</span><span class="badge">JavaScript</span><span class="badge">Database</span></div>
+<div class="proj-btns"><a href="#" class="btn-dark"><i class="fa-solid fa-eye"></i> Live Demo</a><a href="https://github.com/zeejako" target="_blank" class="btn-light"><i class="fa-brands fa-github"></i> GitHub</a></div>
+</div>
+</div>
+
+
+<div class="proj-card">
+<div class="proj-img" style="background:linear-gradient(135deg, #0f1235, #2ec4b6); color:white;">
+<i class="fa-solid fa-user-astronaut"></i>
+</div>
+<div class="proj-content">
+<h3><i class="fa-solid fa-globe"></i> This Portfolio Website</h3>
+<p style="font-size:13.5px; color:#555; margin:0;">My personal brand website built from scratch — professional, responsive, with dark mode.</p>
+<ul>
+<li>8 pages (Home, About, Family, Hobbies, Projects, Goals, Gallery, Contact)</li>
+<li>Fully responsive on mobile & PC</li>
+<li>Dark / Light mode toggle</li>
+<li>Contact form linked to student email</li>
+</ul>
+<div><span class="badge">HTML5</span><span class="badge">CSS3</span><span class="badge">Responsive Design</span></div>
+<div class="proj-btns"><a href="index.html" class="btn-dark"><i class="fa-solid fa-eye"></i> You are here</a><a href="https://github.com/zeejako" target="_blank" class="btn-light"><i class="fa-brands fa-github"></i> GitHub</a></div>
+</div>
+</div>
+
+</div>
+</section>
+
+<footer style="background:#0f1235; color:white; padding:20px; margin-top:40px; text-align:center; border-top:3px solid #ffca28;">
+<p style="color:#9fa8da; font-size:12px;">© 2026 Zizile Jako | Projects built with passion in East London | WSU ICT</p>
+</footer>
+<script src="js/script.js"></script>
+</body>
+</html>
