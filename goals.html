@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Goals - Zizile Jako</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+.hero-goals{position:relative; height:380px; border-radius:20px; overflow:hidden; margin:0 auto 30px; max-width:1000px; display:flex; align-items:center; justify-content:center; text-align:center; color:white;}
+.hero-goals img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover;}
+.hero-goals::after{content:''; position:absolute; inset:0; background:linear-gradient(135deg, rgba(15,18,53,0.9), rgba(26,35,126,0.6));}
+.hero-goals .content{position:relative; z-index:2; padding:20px; max-width:650px;}
+.dream-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(300px,1fr)); gap:22px; max-width:1000px; margin:0 auto 35px;}
+.dream-card{border-radius:20px; overflow:hidden; background:white; box-shadow:0 12px 35px rgba(0,0,0,0.08); border:1px solid #eee; transition:0.4s;}
+.dream-card:hover{transform:translateY(-8px) scale(1.01);}
+.dream-card img{width:100%; height:200px; object-fit:cover;}
+.dream-card .txt{padding:18px;}
+.stepper{max-width:850px; margin:0 auto; display:flex; flex-direction:column; gap:18px;}
+.step{display:flex; gap:16px; background:white; padding:18px; border-radius:16px; border:1px solid #eee; box-shadow:0 6px 18px rgba(0,0,0,0.05); align-items:flex-start;}
+.step .num{min-width:46px; height:46px; border-radius:50%; background:#1a237e; color:#ffca28; display:flex; align-items:center; justify-content:center; font-weight:900; font-size:18px;}
+.seminar{max-width:1000px; margin:35px auto; background:linear-gradient(135deg, #fffde7, #ffffff); border:2px dashed #ffca28; border-radius:20px; padding:24px; display:grid; grid-template-columns:1fr 1fr; gap:20px; align-items:center;}
+@media(max-width:700px){.seminar{grid-template-columns:1fr;}.hero-goals{height:300px;}}
+body.dark-mode .dream-card, body.dark-mode .step{background:#1e1e2f; border-color:#333; color:#f1f1f1;}
+.icon-circle{ width:42px; height:42px; border-radius:50%; border:1px solid rgba(0,0,0,0.15); background:white; color:#1a237e; display:flex; align-items:center; justify-content:center; cursor:pointer;}
+nav ul{display:flex; align-items:center; gap:12px; list-style:none; flex-wrap:wrap; justify-content:center;}
+</style>
+</head>
+<body>
+<header style="display:flex; justify-content:space-between; align-items:center; padding:16px 24px;">
+<div class="logo"><span style="background:#ffca28; color:#1a237e; width:36px; height:36px; border-radius:50%; display:inline-flex; justify-content:center; align-items:center; font-weight:900; margin-right:8px;">ZJ</span> Zizile Jako</div>
+<nav><ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="about.html">About</a></li>
+<li><a href="family.html">Family</a></li>
+<li><a href="hobbies.html">Hobbies</a></li>
+<li><a href="projects.html">Projects</a></li>
+<li><a href="goals.html" class="active">Goals</a></li>
+<li><a href="gallery.html">Gallery</a></li>
+<li><a href="contact.html">Contact</a></li>
+<li><button id="theme-toggle" onclick="toggleMode()" class="icon-circle"><i class="fa-solid fa-moon"></i></button></li>
+</ul></nav>
+</header>
+
+<section style="padding:0 15px;">
+
+
+<div class="hero-goals">
+<img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1200" alt="Big Tech Dream">
+<div class="content">
+<span style="background:#ffca28; color:#1a237e; padding:6px 14px; border-radius:20px; font-weight:900; font-size:11px; letter-spacing:1px;">MY BIG DREAM</span>
+<h1 style="margin:14px 0 10px; font-size:32px; line-height:1.2;">Work For The Biggest <br>Tech Company In The World</h1>
+<p style="color:#ffecb3; font-size:15px;">From Elliotdale to Silicon Valley — Software Engineer | Data Analyst</p>
+</div>
+</div>
+
+
+<div class="dream-grid">
+
+<div class="dream-card">
+<img src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=600" alt="Software Engineer">
+<div class="txt">
+<h3><i class="fa-solid fa-code" style="color:#1a237e;"></i> Software Engineer</h3>
+<p style="font-size:13.5px; color:#555; line-height:1.6;">Design and build world-class systems used by millions. Write clean code in Python, Java, JavaScript. Solve real problems like I did with my Train Booking System but on a global scale at Google, Microsoft, Amazon.</p>
+<div style="margin-top:10px;"><span style="background:#e8eaf6; padding:4px 10px; border-radius:20px; font-size:11px; font-weight:800;">Python</span><span style="background:#e8eaf6; padding:4px 10px; border-radius:20px; font-size:11px; font-weight:800;">System Design</span><span style="background:#fff9c4; padding:4px 10px; border-radius:20px; font-size:11px; font-weight:800;">Dream: Google</span></div>
+</div>
+</div>
+
+<div class="dream-card">
+<img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600" alt="Data Analyst">
+<div class="txt">
+<h3><i class="fa-solid fa-chart-line" style="color:#ffca28;"></i> Data Analyst</h3>
+<p style="font-size:13.5px; color:#555; line-height:1.6;">Turn big data into smart decisions. I love finding stories hidden in data — like my Library System that tracks borrowing trends. At a big tech company, I will help make products smarter with data.</p>
+<div style="margin-top:10px;"><span style="background:#e8eaf6; padding:4px 10px; border-radius:20px; font-size:11px; font-weight:800;">Power BI</span><span style="background:#e8eaf6; padding:4px 10px; border-radius:20px; font-size:11px; font-weight:800;">SQL</span><span style="background:#fff9c4; padding:4px 10px; border-radius:20px; font-size:11px; font-weight:800;">Dream: Data Team</span></div>
+</div>
+</div>
+
+</div>
+
+
+<h3 style="text-align:center; margin:20px 0;"><span style="border-left:4px solid #ffca28; padding-left:12px;">My Roadmap To The Top</span></h3>
+<div class="stepper">
+<div class="step"><div class="num">1</div><div><b>2026: Master The Fundamentals at WSU</b><br><small style="color:#777;">Advanced Diploma in ICT</small><p style="margin:6px 0 0; font-size:13px;">Finish with distinction. Deep dive into DSA, Databases, OOP. Build 10 projects. GitHub green every day.</p></div></div>
+<div class="step"><div class="num" style="background:#ffca28; color:#1a237e;">2</div><div><b>2027: Learn From The Best</b><br><small style="color:#777;">Internships + Certifications</small><p style="margin:6px 0 0; font-size:13px;">Get AWS / Google Data Analytics Certificate. Attend tech seminars, hackathons. Learn from senior engineers.</p></div></div>
+<div class="step"><div class="num">3</div><div><b>2028-2029: Join A Big Tech Company</b><br><small style="color:#777;">The Dream Job</small><p style="margin:6px 0 0; font-size:13px;">Work as Software Engineer / Data Analyst at top company in JHB, Cape Town or remote for global team. Build products millions use.</p></div></div>
+</div>
+
+
+<div class="seminar">
+<div>
+<h3><i class="fa-solid fa-microphone" style="color:#1a237e;"></i> Learn From The Best — Tech Seminars & Events</h3>
+<p style="font-size:13.5px; color:#444; line-height:1.7;">I don't just want a job, I want to grow in the room where future is built.</p>
+<ul style="font-size:13px; line-height:2; padding-left:18px;">
+<li><i class="fa-solid fa-check" style="color:#2ec4b6;"></i> Attend Google I/O, AWS Summit, Microsoft Ignite (online & SA)</li>
+<li><i class="fa-solid fa-check" style="color:#2ec4b6;"></i> Join WSU Tech Talks, GDG East London, Data Science Meetups</li>
+<li><i class="fa-solid fa-check" style="color:#2ec4b6;"></i> Network with senior engineers & mentors</li>
+<li><i class="fa-solid fa-check" style="color:#2ec4b6;"></i> Present my projects, get feedback from experts</li>
+</ul>
+<div style="margin-top:12px; background:#1a237e; color:white; display:inline-block; padding:8px 14px; border-radius:20px; font-size:12px; font-weight:700;"><i class="fa-solid fa-bolt" style="color:#ffca28;"></i> Goal: 5 seminars per year</div>
+</div>
+<img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=600" alt="Tech Conference" style="width:100%; height:260px; object-fit:cover; border-radius:16px;">
+</div>
+
+<div style="max-width:700px; margin:0 auto; text-align:center; background:#0f1235; color:white; padding:24px; border-radius:20px;">
+<p style="font-size:18px; font-style:italic; margin:0; color:#ffca28;">"I came from Elliotdale with a dream. Code is my passport to the world's biggest tech companies."</p>
+<p style="margin-top:10px; color:#c5cae9; font-size:13px;">— Zizile Jako, Future Software Engineer @ Big Tech</p>
+</div>
+
+</section>
+
+<footer style="background:#0f1235; color:white; padding:20px; margin-top:40px; text-align:center; border-top:3px solid #ffca28;">
+<p style="color:#9fa8da; font-size:12px;">© 2026 Zizile Jako | Built in East London, Dreaming Global | WSU ICT</p>
+</footer>
+<script src="js/script.js"></script>
+</body>
+</html>
