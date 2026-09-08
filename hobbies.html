@@ -5,21 +5,39 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Hobbies - Zizile Jako</title>
 <link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <style>
-.hobby-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(220px,1fr)); gap:20px; margin:20px 0;}
-.hobby-card{background:white; border-radius:12px; overflow:hidden; box-shadow:0 4px 12px rgba(0,0,0,0.1); text-align:center; transition:0.3s; border:1px solid #eee;}
-.hobby-card:hover{transform:translateY(-5px); box-shadow:0 8px 20px rgba(0,0,0,0.15);}
-.hobby-card img{width:100%; height:160px; object-fit:cover;}
-.hobby-card h3{margin:10px 0 5px; color:#1a237e;}
-.hobby-card p{font-size:13px; padding:0 10px 15px; color:#555;}
-.fav-box{display:none; background:#e8eaf6; border-left:5px solid #1a237e; padding:20px; border-radius:10px; margin-top:20px;}
-.fav-box.show{display:block;}
+.hobbies-header{text-align:center; max-width:700px; margin:0 auto 30px;}
+.hobby-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(260px,1fr)); gap:22px; margin:20px 0;}
+.hobby-card{background:white; border-radius:18px; overflow:hidden; box-shadow:0 8px 25px rgba(0,0,0,0.08); border:1px solid #eee; transition:0.3s; text-align:left;}
+.hobby-card:hover{transform:translateY(-6px); box-shadow:0 14px 35px rgba(26,35,126,0.15);}
+.hobby-card img{width:100%; height:180px; object-fit:cover; display:block; background:#f5f5ff;}
+.hobby-card .content{padding:16px 18px;}
+.hobby-card h3{margin:0 0 6px; color:#1a237e; font-size:16px; display:flex; align-items:center; gap:8px;}
+.hobby-card h3 i{width:32px; height:32px; background:#e8eaf6; color:#1a237e; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:14px;}
+.hobby-card p{font-size:13.5px; color:#555; line-height:1.6; margin:0;}
+.fav-box{display:none; background:white; border:1px solid #e8eaf6; border-left:5px solid #ffca28; padding:22px; border-radius:16px; margin-top:25px; box-shadow:0 8px 25px rgba(0,0,0,0.06); text-align:left;}
+.fav-box.show{display:block; animation:fadeIn 0.4s ease;}
+@keyframes fadeIn{from{opacity:0; transform:translateY(10px);} to{opacity:1; transform:translateY(0);}}
+.fav-grid{display:flex; gap:18px; justify-content:center; flex-wrap:wrap; margin-top:18px;}
+.fav-grid > div{flex:1; min-width:240px; background:#f9f9ff; padding:16px; border-radius:12px; border:1px solid #eee;}
+.fav-grid img{width:100%; height:140px; object-fit:cover; border-radius:10px; margin-top:10px;}
+.btn-pro{background:#1a237e; color:white; border:none; padding:12px 26px; border-radius:25px; font-weight:700; cursor:pointer; transition:0.3s;}
+.btn-pro:hover{background:#3949ab; transform:scale(1.03);}
+body.dark-mode .hobby-card{background:#1e1e2f; border-color:#333;}
+body.dark-mode .hobby-card p{color:#ccc;}
+body.dark-mode .hobby-card .content h3{color:#ffeb3b;}
+body.dark-mode .fav-box{background:#1e1e2f; border-color:#333; color:#f1f1f1;}
+body.dark-mode .fav-grid > div{background:#252540; border-color:#333;}
+.icon-circle{ width:42px; height:42px; border-radius:50%; border:1px solid rgba(0,0,0,0.15); background:white; color:#1a237e; display:flex; align-items:center; justify-content:center; cursor:pointer; font-size:18px;}
+nav ul{display:flex; align-items:center; gap:14px; list-style:none; flex-wrap:wrap;}
 </style>
 </head>
 <body>
+<div class="animated-bg"><span></span><span></span><span></span><span></span></div>
 
-<header>
-<div class="logo">Zizile Jako</div>
+<header style="display:flex; justify-content:space-between; align-items:center; padding:16px 24px;">
+<div class="logo"><span style="background:#ffca28; color:#1a237e; width:36px; height:36px; border-radius:50%; display:inline-flex; justify-content:center; align-items:center; font-weight:900; margin-right:8px;">ZJ</span> Zizile Jako</div>
 <nav>
 <ul>
 <li><a href="index.html">Home</a></li>
@@ -28,72 +46,86 @@
 <li><a href="hobbies.html" class="active">Hobbies</a></li>
 <li><a href="gallery.html">Gallery</a></li>
 <li><a href="contact.html">Contact</a></li>
-<li><button onclick="toggleMode()" class="mode-btn">🌙</button></li>
+<li><button id="theme-toggle" onclick="toggleMode()" class="icon-circle"><i class="fa-solid fa-moon"></i></button></li>
 </ul>
 </nav>
 </header>
 
 <section>
-<h2>My Hobbies - What I Love Doing</h2>
+<div class="hobbies-header">
+<h2 style="border-left:4px solid #ffca28; display:inline-block; padding-left:12px;"><i class="fa-solid fa-star"></i> My Hobbies</h2>
+<p style="color:#666; margin-top:10px; line-height:1.6;">Beyond my ICT studies at Walter Sisulu University, these are the things that keep me creative, focused and inspired.</p>
+</div>
 
 <div class="hobby-grid">
 
 <div class="hobby-card">
-<img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=400" alt="Coding">
-<h3>💻 Coding & Building Systems</h3>
-<p>Creating websites, apps and solving problems with code. I love turning ideas into real systems.</p>
+<img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=600" alt="Coding">
+<div class="content">
+<h3><i class="fa-solid fa-code"></i> Coding & Building Systems</h3>
+<p>Creating websites, apps and solving real problems with code. I love turning ideas into working systems.</p>
+</div>
 </div>
 
 <div class="hobby-card">
-<img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400" alt="Data Analysis">
-<h3>📊 Data Analysis</h3>
-<p>Exploring data, finding patterns and making meaningful insights from numbers.</p>
+<img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600" alt="Data Analysis">
+<div class="content">
+<h3><i class="fa-solid fa-chart-line"></i> Data Analysis</h3>
+<p>Exploring data, finding patterns and making meaningful insights from numbers to help decision making.</p>
+</div>
 </div>
 
 <div class="hobby-card">
-<img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?w=400" alt="Reading Books">
-<h3>📚 Reading</h3>
-<p>I love reading books - tech books, motivational books and novels. Reading expands my mind and creativity.</p>
+<img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?w=600" alt="Reading Books">
+<div class="content">
+<h3><i class="fa-solid fa-book-open"></i> Reading</h3>
+<p>Tech books, motivational books and novels. Reading expands my mind, vocabulary and creativity every day.</p>
+</div>
 </div>
 
 <div class="hobby-card">
-<img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=400" alt="Music">
-<h3>🎵 Music</h3>
-<p>Listening to music relaxes me and keeps me focused while coding.</p>
+<img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=600" alt="Music">
+<div class="content">
+<h3><i class="fa-solid fa-music"></i> Music</h3>
+<p>Music helps me relax and stay focused while coding long hours. It keeps my energy balanced.</p>
+</div>
 </div>
 
 <div class="hobby-card">
-<img src="https://images.unsplash.com/photo-1452587925148-ce544e77e70d?w=400" alt="Photography">
-<h3>📸 Photography</h3>
-<p>Capturing beautiful moments and memories with my camera.</p>
+<img src="https://images.unsplash.com/photo-1452587925148-ce544e77e70d?w=600" alt="Photography">
+<div class="content">
+<h3><i class="fa-solid fa-camera"></i> Photography</h3>
+<p>Capturing beautiful moments and memories — family, nature and campus life at WSU.</p>
+</div>
 </div>
 
 </div>
 
-<div style="text-align:center; margin:30px 0;">
-<button onclick="showFav()" class="btn" id="favBtn">Click for My Favourite Hobby</button>
+<div style="text-align:center; margin:35px 0;">
+<button onclick="showFav()" class="btn-pro" id="favBtn"><i class="fa-solid fa-eye"></i> View My Favourite Hobbies</button>
 
 <div id="favDisplay" class="fav-box">
-<h3 style="color:#1a237e;">🌟 My Favourite Hobbies Are:</h3>
-<div style="display:flex; gap:15px; justify-content:center; flex-wrap:wrap; margin-top:15px;">
-<div style="flex:1; min-width:200px; background:white; padding:15px; border-radius:8px;">
-<h4>💻 CODING</h4>
-<p>Building solutions and creating something from nothing gives me joy!</p>
-<img src="https://images.unsplash.com/photo-1526379095098-d400fd0bf935?w=300" style="width:100%; height:120px; object-fit:cover; border-radius:8px; margin-top:8px;">
+<h3 style="color:#1a237e;"><i class="fa-solid fa-crown" style="color:#ffca28;"></i> My Favourite Hobbies</h3>
+<p style="color:#555; margin-top:6px;">If I had to choose two, these define me:</p>
+<div class="fav-grid">
+<div>
+<h4 style="color:#1a237e;"><i class="fa-solid fa-code"></i> CODING</h4>
+<p style="font-size:13px; color:#555; margin-top:6px;">Building solutions and creating something from nothing gives me joy and purpose.</p>
+<img src="https://images.unsplash.com/photo-1526379095098-d400fd0bf935?w=400" alt="Coding fav">
 </div>
-<div style="flex:1; min-width:200px; background:white; padding:15px; border-radius:8px;">
-<h4>📚 READING BOOKS</h4>
-<p>Reading is my escape and my learning. I love to do both coding and reading!</p>
-<img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?w=300" style="width:100%; height:120px; object-fit:cover; border-radius:8px; margin-top:8px;">
+<div>
+<h4 style="color:#1a237e;"><i class="fa-solid fa-book"></i> READING BOOKS</h4>
+<p style="font-size:13px; color:#555; margin-top:6px;">Reading is my escape and my teacher. Knowledge from books makes my code better.</p>
+<img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?w=400" alt="Reading fav">
 </div>
 </div>
-<p style="margin-top:15px; font-weight:bold;">My favourite hobby is CODING + READING - building solutions with knowledge from books! 🚀</p>
+<p style="margin-top:18px; font-weight:800; text-align:center; background:#fffde7; padding:10px; border-radius:8px; border-left:4px solid #ffca28; color:#1a237e;">My formula: Knowledge from Books + Skills from Coding = Solutions that change lives</p>
 </div>
 </div>
 
 </section>
 
-<footer><p></p></footer>
+<footer><p>Zizile Jako 2026</p></footer>
 
 <script src="js/script.js"></script>
 <script>
@@ -102,11 +134,18 @@ function showFav(){
   const btn = document.getElementById('favBtn');
   box.classList.toggle('show');
   if(box.classList.contains('show')){
-    btn.textContent = 'Hide Favourite';
-    box.scrollIntoView({behavior:'smooth'});
+    btn.innerHTML = '<i class="fa-solid fa-eye-slash"></i> Hide Favourite';
+    box.scrollIntoView({behavior:'smooth', block:'start'});
   } else {
-    btn.textContent = 'Click for My Favourite Hobby';
+    btn.innerHTML = '<i class="fa-solid fa-eye"></i> View My Favourite Hobbies';
   }
+}
+const themeIcon = document.querySelector('#theme-toggle i');
+const originalToggle = window.toggleMode;
+window.toggleMode = function(){
+  if(originalToggle) originalToggle();
+  const isLight = document.body.classList.contains('light-mode');
+  if(themeIcon) themeIcon.className = isLight? 'fa-solid fa-sun' : 'fa-solid fa-moon';
 }
 </script>
 
