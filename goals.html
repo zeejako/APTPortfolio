@@ -21,9 +21,22 @@
 .step .num{min-width:46px; height:46px; border-radius:50%; background:#1a237e; color:#ffca28; display:flex; align-items:center; justify-content:center; font-weight:900; font-size:18px;}
 .seminar{max-width:1000px; margin:35px auto; background:linear-gradient(135deg, #fffde7, #ffffff); border:2px dashed #ffca28; border-radius:20px; padding:24px; display:grid; grid-template-columns:1fr 1fr; gap:20px; align-items:center;}
 @media(max-width:700px){.seminar{grid-template-columns:1fr;}.hero-goals{height:300px;}}
-body.dark-mode .dream-card, body.dark-mode .step{background:#1e1e2f; border-color:#333; color:#f1f1f1;}
 .icon-circle{ width:42px; height:42px; border-radius:50%; border:1px solid rgba(0,0,0,0.15); background:white; color:#1a237e; display:flex; align-items:center; justify-content:center; cursor:pointer;}
 nav ul{display:flex; align-items:center; gap:12px; list-style:none; flex-wrap:wrap; justify-content:center;}
+
+/* DARK MODE FIX */
+body.dark-mode .dream-card,
+body.dark-mode .step{background:#1e1e2f !important; border-color:#333 !important;}
+body.dark-mode .dream-card .txt p,
+body.dark-mode .step p,
+body.dark-mode .seminar p,
+body.dark-mode .seminar li{color:#e0e0e0 !important;}
+body.dark-mode .dream-card .txt h3,
+body.dark-mode .step b,
+body.dark-mode .seminar h3{color:#ffffff !important;}
+body.dark-mode .step small{color:#aaa !important;}
+body.dark-mode .seminar{background:#1e1e2f !important; border-color:#ffca28 !important;}
+body.dark-mode .seminar ul li{color:#ddd !important;}
 </style>
 </head>
 <body>
@@ -44,19 +57,16 @@ nav ul{display:flex; align-items:center; gap:12px; list-style:none; flex-wrap:wr
 
 <section style="padding:0 15px;">
 
-
 <div class="hero-goals">
 <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1200" alt="Big Tech Dream">
 <div class="content">
-<span style="background:#ffca28; color:#1a237e; padding:6px 14px; border-radius:20px; font-weight:900; font-size:11px; letter-spacing:1px;">MY BIG DREAM</span>
+<span style="background:#ffca28; color:#1a237e; padding:6px 14px; border-radius:20px; font-weight:900; font-size:11px;">MY BIG DREAM</span>
 <h1 style="margin:14px 0 10px; font-size:32px; line-height:1.2;">Work For The Biggest <br>Tech Company In The World</h1>
 <p style="color:#ffecb3; font-size:15px;">From Elliotdale to Silicon Valley — Software Engineer | Data Analyst</p>
 </div>
 </div>
 
-
 <div class="dream-grid">
-
 <div class="dream-card">
 <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=600" alt="Software Engineer">
 <div class="txt">
@@ -74,9 +84,7 @@ nav ul{display:flex; align-items:center; gap:12px; list-style:none; flex-wrap:wr
 <div style="margin-top:10px;"><span style="background:#e8eaf6; padding:4px 10px; border-radius:20px; font-size:11px; font-weight:800;">Power BI</span><span style="background:#e8eaf6; padding:4px 10px; border-radius:20px; font-size:11px; font-weight:800;">SQL</span><span style="background:#fff9c4; padding:4px 10px; border-radius:20px; font-size:11px; font-weight:800;">Dream: Data Team</span></div>
 </div>
 </div>
-
 </div>
-
 
 <h3 style="text-align:center; margin:20px 0;"><span style="border-left:4px solid #ffca28; padding-left:12px;">My Roadmap To The Top</span></h3>
 <div class="stepper">
@@ -84,7 +92,6 @@ nav ul{display:flex; align-items:center; gap:12px; list-style:none; flex-wrap:wr
 <div class="step"><div class="num" style="background:#ffca28; color:#1a237e;">2</div><div><b>2027: Learn From The Best</b><br><small style="color:#777;">Internships + Certifications</small><p style="margin:6px 0 0; font-size:13px;">Get AWS / Google Data Analytics Certificate. Attend tech seminars, hackathons. Learn from senior engineers.</p></div></div>
 <div class="step"><div class="num">3</div><div><b>2028-2029: Join A Big Tech Company</b><br><small style="color:#777;">The Dream Job</small><p style="margin:6px 0 0; font-size:13px;">Work as Software Engineer / Data Analyst at top company in JHB, Cape Town or remote for global team. Build products millions use.</p></div></div>
 </div>
-
 
 <div class="seminar">
 <div>
