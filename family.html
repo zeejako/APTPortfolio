@@ -8,16 +8,15 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <style>
 .family-timeline{max-width:650px; margin:0 auto; padding-left:35px; position:relative;}
-.family-timeline::before{content:''; position:absolute; left:12px; top:0; bottom:0; width:4px; background:#ffca28; border-radius:5px;}
-.family-card{position:relative; background:white; border-radius:18px; margin-bottom:30px; overflow:hidden; box-shadow:0 8px 25px rgba(0,0,0,0.1); border:1px solid #eee;}
+.family-timeline::before{content:''; position:absolute; left:12px; top:0; bottom:0; width:4px; background:linear-gradient(#ffca28, #1a237e); border-radius:5px;}
+.family-card{position:relative; background:white; border-radius:18px; margin-bottom:30px; overflow:hidden; box-shadow:0 8px 25px rgba(0,0,0,0.1); border:1px solid #eee; transition:0.3s;}
+.family-card:hover{transform:translateY(-5px); box-shadow:0 12px 35px rgba(0,0,0,0.15);}
 .family-card::before{content:''; position:absolute; left:-28px; top:20px; width:14px; height:14px; background:#1a237e; border:3px solid #ffca28; border-radius:50%;}
-
-
 .family-card img{width:100%; height:auto; display:block; background:#f5f5f5;}
-.card-content{padding:18px;}
-.role{font-size:11px; font-weight:800; padding:4px 10px; border-radius:20px; display:inline-block; margin:6px 0;}
-.sweet{background:#fffde7; padding:12px; border-radius:10px; border-left:4px solid #ffca28; font-style:italic; margin-top:10px; color:#333; line-height:1.6;}
-body.dark-mode .family-card{background:#1e1e2f; color:white;}
+.card-content{padding:18px; text-align:left;}
+.role{font-size:11px; font-weight:800; padding:4px 12px; border-radius:20px; display:inline-block; margin:6px 0; letter-spacing:0.5px;}
+.sweet{background:#fffde7; padding:12px 14px; border-radius:10px; border-left:4px solid #ffca28; font-style:italic; margin-top:10px; color:#333; line-height:1.7; font-size:14.5px;}
+body.dark-mode .family-card{background:#1e1e2f; color:#f1f1f1;}
 body.dark-mode .sweet{background:#2d2d4d; color:#ffeb3b;}
 .icon-circle{ width:42px; height:42px; border-radius:50%; border:1px solid rgba(0,0,0,0.15); background:white; color:#1a237e; display:flex; align-items:center; justify-content:center; cursor:pointer;}
 nav ul{display:flex; align-items:center; gap:12px; list-style:none; flex-wrap:wrap;}
@@ -40,33 +39,68 @@ nav ul{display:flex; align-items:center; gap:12px; list-style:none; flex-wrap:wr
 </header>
 
 <section>
-<h2 style="text-align:center;"><i class="fa-solid fa-people-roof"></i> My Family</h2>
-<p style="text-align:center; max-width:600px; margin:10px auto 30px;">My strength, my support, my everything.</p>
+<h2 style="text-align:center;"><i class="fa-solid fa-people-roof"></i> My Family, My Strength</h2>
+<p style="text-align:center; max-width:650px; margin:10px auto 35px; color:#666;">My family is my foundation. We grew up in Elliotdale with love, respect and Ubuntu. They are the reason I am studying ICT at Walter Sisulu University.</p>
 
 <div class="family-timeline">
+
 
 <div class="family-card">
 <img src="images/mom.jpeg" alt="My Mother">
 <div class="card-content">
 <h3><i class="fa-solid fa-heart" style="color:#d32f2f;"></i> My Mother</h3>
 <span class="role" style="background:#1a237e; color:#ffca28;">MY BIGGEST SUPPORTER</span>
-<div class="sweet">Mama, you are my everything. Your love, your prayers, and your sacrifices made me who I am today. I love you more than words can say. Thank you for believing in me always.</div>
+<div class="sweet">Mama, you are my everything. Your love, your prayers, and your daily sacrifices made me who I am today. Every time I feel like giving up on my studies, I remember your strength and your words: "Education will change our story". Thank you for believing in me when no one else did. I love you endlessly, Mama wam.</div>
 </div>
 </div>
+
 
 <div class="family-card">
 <img src="images/aunt.jpeg" alt="My Late Aunt">
 <div class="card-content">
-<h3><i class="fa-solid fa-star" style="color:#ffca28;"></i> My Late Aunt</h3>
+<h3><i class="fa-solid fa-dove"></i> My Late Aunt</h3>
 <span class="role" style="background:#ffca28; color:#1a237e;">FOREVER IN MY HEART</span>
-<div class="sweet">To my beloved aunt, though you are no longer with us physically, your spirit lives in me every day. You taught me discipline, respect, and to never give up. I will make you proud. Rest in peace.</div>
+<div class="sweet">To my beloved aunt, though you are no longer here physically, your spirit lives in me every day. You taught me discipline, respect, and to never give up on my dreams. Your wisdom still guides me at university. I miss your smile and advice. Continue resting in peace, my angel — I promise to make you proud.</div>
+</div>
+</div>
+
+
+<div class="family-card">
+<div class="card-content">
+<h3><i class="fa-solid fa-people-group" style="color:#1a237e;"></i> My Siblings</h3>
+<span class="role" style="background:#e8eaf6; color:#1a237e;">MY BEST FRIENDS FOR LIFE</span>
+<div class="sweet">We grew up together in Elliotdale — sharing one plate, one blanket, and big dreams. You are not just my siblings, you are my best friends, my protectors, and my laugh. We fight, we forgive, we support each other. No matter where life takes us, we will always have each other's backs. I love you all.</div>
+</div>
+</div>
+
+<!-- COUSINS -->
+<div class="family-card">
+<div class="card-content">
+<h3><i class="fa-solid fa-heart-circle-bolt" style="color:#ffca28;"></i> My Cousins</h3>
+<span class="role" style="background:#1a237e; color:white;">FAMILY BOND FOREVER</span>
+<div class="sweet">To my amazing cousins — thank you for the childhood memories, the jokes, the secrets, and the unconditional love. Growing up with you felt like having extra brothers and sisters. You taught me what true family bond means. Even when we are far apart, our connection stays strong. Cousins by blood, friends by choice.</div>
+</div>
+</div>
+
+
+<div class="family-card" style="background:linear-gradient(135deg, #1a237e, #3949ab);">
+<div class="card-content">
+<h3 style="color:white;"><i class="fa-solid fa-house-chimney" style="color:#ffca28;"></i> Family Values</h3>
+<span class="role" style="background:#ffca28; color:#1a237e;">WHAT WE BELIEVE</span>
+<p style="color:#e8eaf6; margin-top:8px;">Our home is built on four pillars that my mother and aunt taught us:</p>
+<div class="sweet" style="background:rgba(255,255,255,0.12); color:#ffeb3b; border-left-color:#ffca28;">
+<b>Love</b> — We love without conditions.<br>
+<b>Respect</b> — We respect elders and each other.<br>
+<b>Education</b> — We believe education is the key to change our future.<br>
+<b>Ubuntu</b> — "Umntu ngumntu ngabantu" — I am because we are. We never leave each other behind.
+</div>
 </div>
 </div>
 
 </div>
 </section>
 
-<footer><p>Zizile Jako</p></footer>
+<footer><p>Zizile Jako 2026</p></footer>
 <script src="js/script.js"></script>
 </body>
 </html>
